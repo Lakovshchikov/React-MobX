@@ -7,10 +7,13 @@ class Logo extends Component{
 
     render(){
         return(
-            <a
-                className="logo"
-                href={window.location.href}
-            ></a>)
+            <div className="logo_wrapper">
+                <a
+                    className="logo"
+                    href={window.location.href}
+                ></a>
+            </div>
+)
     }
 }
 

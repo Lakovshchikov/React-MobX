@@ -1,0 +1,30 @@
+
+/////// SEARCH_BAR ////////
+
+.search_wrapper{
+  display: flex;
+  margin: 0.1rem 0 0 1rem;
+
+  .search_bar{
+
+    input[type='text']{
+      margin: 1rem 0 0 1rem;
+      width: 15rem;
+      padding: 0.5rem 1rem;
+      border: 2px solid @regularGray;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+      outline: none;
+      font-size: 16px;
+      line-height: 16px;
+    }
+
+    &.active{
+
+      input[type='text']{
+        border-color: @regularYellow;
+      }
+    }
+  }
+}
+

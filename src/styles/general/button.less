@@ -1,0 +1,33 @@
+
+//////// BUTTON /////////
+
+
+.button{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  width: 4rem;
+  height: 2rem;
+  background-color: white;
+
+  &.search_button{
+    height: 2.6rem;
+    width: 5.5rem;
+    margin: 1rem 0;
+    background-color: @regularGray;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+
+    &.active{
+      background-color: @regularYellow;
+
+      &:hover{
+        background-color: @regularOrange;
+      }
+    }
+  }
+}
+
+
