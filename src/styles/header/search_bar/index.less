@@ -4,26 +4,44 @@
 .search_wrapper{
   display: flex;
   margin: 0.1rem 0 0 1rem;
+  flex-direction: row;
+  justify-content: center;
 
   .search_bar{
+    display: flex;
+    margin: 1rem 0 1.3rem 1rem;
+    border: 2px solid @regularGray;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+
+    .input_clear-wrapper{
+      min-height: 2rem;
+      min-width: 2rem;
+
+      .input_clear{
+        display: block;
+        margin-top: auto;
+        width: 2rem;
+        height: 2.2rem;
+        opacity: .3;
+        background: url("../../../static/images/clear.svg") center center no-repeat;
+        background-size: 16px;
+        &:hover{
+          opacity: .8;
+        }
+      }
+    }
 
     input[type='text']{
-      margin: 1rem 0 0 1rem;
-      width: 15rem;
-      padding: 0.5rem 1rem;
-      border: 2px solid @regularGray;
-      border-top-left-radius: 3px;
-      border-bottom-left-radius: 3px;
+      border: none;
       outline: none;
       font-size: 16px;
       line-height: 16px;
+      margin: 0.5rem 0rem 0.5rem 1rem;
     }
 
     &.active{
-
-      input[type='text']{
         border-color: @regularYellow;
-      }
     }
   }
 }

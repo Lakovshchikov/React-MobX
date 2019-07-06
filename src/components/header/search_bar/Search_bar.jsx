@@ -11,8 +11,13 @@ class Search_bar extends Component{
         super(props)
 
         this.render_searchHistory = this.render_searchHistory.bind(this);
-        this.onFocusInput = this.onFocusInput.bind(this);
-        this.onBlurInput = this.onBlurInput.bind(this);
+        this.inputClear = this.inputClear.bind(this);
+        this.onInputTextChange = this.onInputTextChange.bind(this);
+        this.toggleState = this.toggleState.bind(this);
+
+        this.state = {
+            input_value: ''
+        };
     }
 
     render_searchHistory (history_items){
@@ -29,32 +34,51 @@ class Search_bar extends Component{
         )
     }
 
-    onFocusInput() {
-        SearchBarStore.toggleState();
-        SearchButtonStore.toggleState();
+    toggleState(){
+        if(!this.state.input_value) {
+            SearchBarStore.toggleState();
+            SearchButtonStore.toggleState();
+        }
     }
 
-    onBlurInput() {
-        SearchBarStore.toggleState();
-        SearchButtonStore.toggleState()
+    onInputTextChange(e){
+        this.setState({
+            input_value:e.target.value
+        })
+    }
+
+    inputClear(){
+        this.setState({
+            input_value:''
+        },()=>{
+            this.toggleState();
+        })
     }
 
     // TO DO
-
-    //привязать active к state
-    //history_items из store
-    //onFocus onBlur
-    // Крестик на поиске, кнопка поиска
+    // history_items из store
 
     render(){
-        let active = SearchBarStore.getState();
+        let active = SearchBarStore.getState() || this.state.input_value.length;
         return(
             <div className="search_wrapper">
                 <div className={classNames('search_bar',{active:active})}>
                     <input type="text"
-                        onFocus={this.onFocusInput}
-                        onBlur={this.onBlurInput}
+                        onFocus={this.toggleState}
+                        onBlur={this.toggleState}
+                        onChange={this.onInputTextChange}
+                        value={this.state.input_value}
                     />
+                    <div className="input_clear-wrapper">
+                        {(this.state.input_value.length) ?
+                            <span
+                                onClick={this.inputClear}
+                                className={"input_clear"}
+                            >
+                            </span>
+                        :
+                        null}
+                    </div>
                 </div>
                 <Button
                     text = {'Поиск'}
