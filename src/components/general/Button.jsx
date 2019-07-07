@@ -6,9 +6,7 @@ import Dictionary from '../../lib/dictionary'
 /*
  @props
     .text       {string}    текст кнопки
-    .onClick    {function}  handler на клик
     .store      {Object}    Store для компонента
-    .active     {bool}      активный стиль, если нужно прокинуть из другого элемента
 */
 
 
@@ -24,19 +22,15 @@ class Button extends Component{
     }
 
     setStyles(){
-        let type = this.Store.constructor.name;
-        let { ButtonTypes } = Dictionary;
-        if(type == ButtonTypes.SEARCH){
-            this.button_style = "search_button";
-        }
+        this.button_style = this.Store.Style.button_style;
     }
 
     onClick(){
-        this.props.onClick();
+        this.Store.onClick();
     }
 
     render(){
-        let active = this.Store.getState();
+        let active = this.Store.State;
         this.setStyles()
         return(
             <div

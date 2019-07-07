@@ -4,13 +4,21 @@ class Button {
 
     @observable active;
 
+    style = {}
+
     constructor(){
         this.active = false
     }
 
-    getState(){ return this.active }
+    get State(){ return this.active }
+
+    get Style(){ return this.style }
 
     toggleState(){ this.active = !this.active }
+
+    onClick(){}
+
+
 }
 
 export default Button
