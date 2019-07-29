@@ -1,0 +1,61 @@
+////////// GEOPOSITION //////////
+
+
+.geoposition{
+  max-width: 9rem;
+  overflow: hidden;
+
+  .icon{
+
+    &:before{
+      content: '';
+      position: relative;
+      height: 1.5rem;
+      top: 1.7em;
+      display: block;
+      left: 0.6em;
+      margin-top: -1em;
+      width: 1.5rem;
+      background: url("../../../static/images/gray_geo_arrow.svg") center no-repeat;
+      opacity: 1;
+      transition-property: opacity;
+      transition-duration: .3s;
+    }
+    &:after{
+      content: '';
+      position: relative;
+      height: 1.5rem;
+      top: 1.2em;
+      display: block;
+      left: 0.6em;
+      margin-top: -1em;
+      width: 1.5rem;
+      background: url("../../../static/images/red_geo_arrow.svg") center no-repeat;
+      opacity: 0;
+      transition-property: opacity;
+      transition-duration: .3s;
+    }
+  }
+
+  .position{
+    margin-left: 2.3rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+  }
+
+  &:hover{
+    .icon{
+      &:before{
+        opacity: 0;
+      }
+      &:after{
+        opacity: 1;
+      }
+    }
+    .position{
+      color: red;
+    }
+  }
+}

@@ -82,9 +82,7 @@ class Search_bar extends Component{
                 </div>
                 <Button
                     text = {'Поиск'}
-                    onClick = {()=>{}}
                     store = {SearchButtonStore}
-                    active = {active}
                 />
                 {(false) ?
                 this.render_searchHistory()
