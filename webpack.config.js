@@ -36,6 +36,16 @@ module.exports = {
                         },
                     },
                 ],
+            },
+            {
+                test: /\.(eot|ttf|woff|otf)$/,
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        limit: 65000,
+                        name: 'fonts/[name].[ext]'
+                    }
+                }]
             }
         ]
     },

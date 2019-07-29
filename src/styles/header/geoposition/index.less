@@ -7,33 +7,28 @@
 
   .icon{
 
-    &:before{
-      content: '';
-      position: relative;
-      height: 1.5rem;
-      top: 1.7em;
-      display: block;
-      left: 0.6em;
-      margin-top: -1em;
-      width: 1.5rem;
-      background: url("../../../static/images/gray_geo_arrow.svg") center no-repeat;
-      opacity: 1;
-      transition-property: opacity;
-      transition-duration: .3s;
-    }
+    &:before,
     &:after{
       content: '';
       position: relative;
-      height: 1.5rem;
-      top: 1.2em;
+      height: 1.1rem;
       display: block;
       left: 0.6em;
-      margin-top: -1em;
       width: 1.5rem;
-      background: url("../../../static/images/red_geo_arrow.svg") center no-repeat;
-      opacity: 0;
       transition-property: opacity;
       transition-duration: .3s;
+    }
+    &:before{
+      top: 1.7em;
+      margin-top: -.6em;
+      background: url("../../../static/images/gray_geo_arrow.svg") center no-repeat;
+      opacity: 1;
+    }
+    &:after{
+      top: 1.2em;
+      margin-top: -.7em;
+      background: url("../../../static/images/red_geo_arrow.svg") center no-repeat;
+      opacity: 0;
     }
   }
 

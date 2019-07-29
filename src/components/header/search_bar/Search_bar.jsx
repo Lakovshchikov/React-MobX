@@ -81,7 +81,7 @@ class Search_bar extends Component{
                     </div>
                 </div>
                 <Button
-                    text = {'Поиск'}
+                    text = {'Найти'}
                     store = {SearchButtonStore}
                 />
                 {(false) ?
