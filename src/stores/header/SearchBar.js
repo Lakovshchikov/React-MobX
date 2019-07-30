@@ -1,6 +1,6 @@
 import {observable} from "mobx";
 
-class Search_bar {
+class SearchBar {
 
     @observable active;
 
@@ -13,4 +13,4 @@ class Search_bar {
     toggleState(){ this.active = !this.active }
 }
 
-export default new Search_bar()
+export default new SearchBar()

@@ -17,8 +17,66 @@
   width: 100%;
   user-select: none;
 
-  .menu-item_wrapper{
-    margin: 1rem 1.5rem;
-    height: 2.7rem;
+  .menu-wrapper{
+    display: flex;
+
+    .menu-item_wrapper{
+      margin: 1rem 0 1rem 1.5rem;
+      height: 2.7rem;
+
+      .menu-item{
+        max-width: 9rem;
+        overflow: hidden;
+
+        .icon{
+
+          &:before,
+          &:after{
+            content: '';
+            position: relative;
+            height: 1.1rem;
+            display: block;
+            left: 0.6em;
+            width: 1.5rem;
+            transition-property: opacity;
+            transition-duration: .2s;
+          }
+          &:before{
+            top: 1.7em;
+            margin-top: -.6em;
+            opacity: 1;
+          }
+          &:after{
+            top: 1.2em;
+            margin-top: -.7em;
+            opacity: 0;
+          }
+        }
+
+        .text{
+          margin-left: 2.3rem;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: block;
+          transition-property: color;
+          transition-duration: .2s;
+        }
+
+        &:hover{
+          .icon{
+            &:before{
+              opacity: 0;
+            }
+            &:after{
+              opacity: 1;
+            }
+          }
+          .text{
+            color: red;
+          }
+        }
+      }
+    }
   }
 }

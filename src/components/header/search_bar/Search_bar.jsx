@@ -1,8 +1,8 @@
 import React, { Component} from 'react';
 import {observer} from "mobx-react";
 import classNames from 'classnames';
-import SearchBarStore from '../../../stores/header/Search_bar.js'
-import SearchButtonStore from '../../../stores/general/button/SearchButtonStore'
+import SearchBarStore from '../../../stores/header/SearchBar.js'
+import SearchButtonStore from '../../../stores/header/SearchButtonStore'
 import Button from '../../general/Button'
 
 @observer
@@ -22,7 +22,7 @@ class Search_bar extends Component{
 
     render_searchHistory (history_items){
         return(
-            <div className={classNames('search_history_wrapper, {active: false}')}>
+            <div className={classNames('search_history_wrapper')}>
                 {history_items.forEach((item)=>{
                     return(
                         <div className='search_item'>

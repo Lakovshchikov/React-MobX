@@ -1,16 +1,21 @@
-import {observable, autorun} from "mobx";
+import {observable} from "mobx";
 import axios from "axios";
 import Request_API from "../../lib/Request_API"
+import MenuItemStore from "../general/MenuItem"
 
-class GeoPosition {
+class GeoPosition extends MenuItemStore{
 
     @observable position
 
     constructor(){
+        super();
         this.position = 'Не установлена';
+        this.style = 'geoposition';
     }
 
-    getPosition(){
+    get Text() { return this.position }
+
+    onClick(){
         let that = this;
         if ("geolocation" in navigator) {
             navigator.geolocation.getCurrentPosition(function(position) {
