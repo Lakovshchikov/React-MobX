@@ -14,6 +14,8 @@ class MenuItem extends Component{
     }
 
     render(){
+        let {Style} = this.Store;
+
         return(
             <div
                 className={classNames('menu-item_wrapper')}
@@ -22,7 +24,7 @@ class MenuItem extends Component{
                     this.Store.onClick();
                 }}
             >
-                <div className={classNames('menu-item', this.Store.Style)}>
+                <div className={ classNames('menu-item', Style.common) }>
                     <span className='icon'></span>
                     <span className='text'>{this.Store.Text}</span>
                 </div>

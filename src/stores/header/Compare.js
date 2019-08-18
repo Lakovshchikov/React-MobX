@@ -4,7 +4,9 @@ class Compare extends MenuItemStore{
     constructor(){
         super()
         this.text = 'Сравнение';
-        this.style = 'compare';
+        this.style = {
+            common: 'compare_menu-item'
+        };
     }
 
     onClick() {

@@ -10,7 +10,9 @@ class GeoPosition extends MenuItemStore{
     constructor(){
         super();
         this.position = 'Не установлена';
-        this.style = 'geoposition';
+        this.style = {
+            common: 'geoposition_menu-item'
+        };
     }
 
     get Text() { return this.position }

@@ -1,0 +1,27 @@
+////////// NOTIFICATION //////////
+
+.menu-wrapper {
+  .menu-item_wrapper {
+    .menu-item {
+      &.notification_menu-item {
+        min-width: 2rem;
+        overflow: hidden;
+        cursor: none;
+
+        .icon {
+          cursor: pointer;
+          &:before {
+            margin-top: 1.1em;
+            top: 0px;
+            background: url("../../../static/images/gray_notify.svg") center no-repeat;
+          }
+
+          &:after {
+            top: -.5em;
+            background: url("../../../static/images/black_notify.svg") center no-repeat;
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,7 +5,9 @@ class Wishlist extends MenuItemStore{
     constructor(){
         super();
         this.text = 'Отложенные';
-        this.style = 'wishlist';
+        this.style = {
+            common: 'wishlist'
+        };
     }
 
     onClick() {

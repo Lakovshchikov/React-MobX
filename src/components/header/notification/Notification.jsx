@@ -1,36 +1,38 @@
 import {observer} from "mobx-react";
 import React, { Component} from 'react';
-import classNames from 'classnames';
+import {has} from "mobx";
 
 /* Props
- store {Object) - store для соответсвующего MenuItem
+ store {Object} - store для Notification
 */
 
 @observer
-class MenuItem extends Component{
+class Notification extends Component{
+
     constructor(props){
         super(props)
         this.Store = this.props.store;
     }
 
     render(){
-        let {Style} = this.Store;
-
-        return(
+        let {Style}     =   this.Store;
+        let active      =   this.Store.active;
+        let hasNotify   =   this.Store.hasNotify;
+        let classnames  =   `menu-item ${Style.common} ${active ? Style.active : ""} ${hasNotify ? Style.notify : ""}`;
+        return (
             <div
-                className={classNames('menu-item_wrapper')}
+                className={'menu-item_wrapper'}
 
                 onClick={()=>{
                     this.Store.onClick();
                 }}
             >
-                <div className={ classNames('menu-item', Style.common) }>
+                <div className={ classnames }>
                     <span className='icon'></span>
-                    <span className='text'>{this.Store.Text}</span>
                 </div>
             </div>
         )
     }
 }
 
-export default MenuItem
+export default Notification

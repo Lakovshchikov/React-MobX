@@ -4,9 +4,10 @@ class MenuItem {
 
     @observable text
 
+    style = {};
+
     constructor(){
         this.text = '';
-        this.style = '';
     }
 
     get Style(){ return this.style }
